@@ -11,15 +11,27 @@
 
 ## Features
 
- - [x] Only list shares with `--list-shares`.
- - [x] Select only files with given extensions (with `--extensions`) or all files.
- - [x] Choose the local folder to dump to with `--dump-dir`.
- - [x] Select base folder to search from in the share with `--base-dir`.
+- [x] Only list shares with `--list-shares`.
+- [x] Select only files with given extensions (with `--extensions`) or all files.
+- [x] Choose the local folder to dump to with `--dump-dir`.
+- [x] Select base folder to search from in the share with `--base-dir`.
+
+## Installation
+
+```
+uv tool install git+https://github.com/UnkAtreus/DumpSMBShare.git
+```
+
+or
+
+```
+pipx install git+https://github.com/UnkAtreus/DumpSMBShare.git
+```
 
 ## Usage
 
 ```
-$ ./DumpSMBShare.py -h
+$ ./dumpsmbshare -h
 DumpSMBShare v1.3 - by Remi GASCOU (Podalirius)
 
 usage: Dump.py [-h] (-s SHARE | -l) [-e EXTENSIONS] [-D DUMP_DIR] [-f FILE] [-B BASE_DIR] [--debug] [-q] [-H LMHASH:NTHASH] [--no-pass] [-k] [-A hex key]
@@ -65,11 +77,11 @@ connection:
 
 ## Example
 
- + Dump all files from the `SYSVOL` share:
+- Dump all files from the `SYSVOL` share:
 
-    ```
-    ./DumpSMBShare.py 'LAB.local/user2:Admin123@192.168.2.1' --debug
-    ```
+  ```
+  ./dumpsmbshare 'LAB.local/user2:Admin123@192.168.2.1' --debug
+  ```
 
 ![](./.github/example_verbose.png)
 
